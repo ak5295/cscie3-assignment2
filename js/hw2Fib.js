@@ -28,6 +28,23 @@ getFibSum.onclick = function(){
   */
 
  function fibonacciSum(){
- /// WRITE YOUR CODE HERE
+   /// WRITE YOUR CODE HERE
+   let fibNMinus2 = 0;
+   let fibNMinus1 = 1;
+   let sum = 1;
+   let cnt = 1;
 
+   while(cnt < 11) {
+     fib = fibNMinus1 + fibNMinus2;
+
+     if(fib%2 == 1) {
+       sum += fib;
+       cnt++;
+     }
+
+     fibNMinus2 = fibNMinus1;
+     fibNMinus1 = fib;
+   }
+
+   return sum;
  }
