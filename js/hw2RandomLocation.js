@@ -44,7 +44,13 @@ placeBtn.onclick = function(){
 
  	//now we'll get the HTML element where the X goes, fill in the X and set the position of the element.
  	var markerElement = document.getElementById("marker");
-        markerElement.style.top = parseInt(yPosition)+'px';
-        markerElement.style.left = parseInt(xPosition)+'px';
+        markerElement.style.top = parseInt(xPosition)+'px';
+        markerElement.style.left = parseInt(yPosition)+'px';
+        markerElement.style.width = parseInt(xPosition)+'px';
+        markerElement.style.height = parseInt(yPosition)+'px';
+
+        for (var style in this.graphElement) {
+               this.markerElement.style[style] = this.graphElement[style];
+        }
 
  }
