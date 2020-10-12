@@ -91,6 +91,7 @@ image_obj.onload = function(){
 
     //grab the image bitmap data array so we can iterate over it
     var pixels = imageData.data;
+    console.log("pixels:", pixels);
 
     /* Here's where we call the functions that do the magic - your magic.
      * In the file hw2ArrayImageProcessing.js you will write the functions that

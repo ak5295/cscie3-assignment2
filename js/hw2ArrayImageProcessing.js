@@ -54,10 +54,15 @@ function makeBlue(original, output){
       // change this as needed to "makeBlue"
 
       // YOUR CODE GOES HERE
-  for (var i=0; i<original.length; i++){
-    output[i] = original[i];
-  }
-
+      // define number of pixels
+      const numPixels = original.length/4;
+      // read the data
+      for (var i=0; i<numPixels; i++){
+            output[i*4 + 0] = 0; // red
+            output[i*4 + 1] = 0; // green
+            output[i*4 + 2] = original[i*4 + 2]; // blue
+            output[i*4 + 3] = 255; // alpha
+      }
 }
 
 /*
@@ -74,6 +79,16 @@ function makeBlue(original, output){
  **/
 function makeReverse(original, output){
       // YOUR CODE GOES HERE
+      // read the data
+      for(let i = 0; i < original.length; i++) {
+            if(i%4 !== 3) {
+                  // if rgb, write the output with 255-n inverted color
+                  output[i] = 255 - original[i]; //rgb
+            } else {
+                  // if alpha, write its original value
+                  output[i] = original[i];  //alpha
+            }
+      }
 }
 
 /*
@@ -90,6 +105,16 @@ function makeReverse(original, output){
 
 function makeTransparent(original,output){
       // YOUR CODE GOES HERE
+      // read the data
+      for(let i = 0; i < original.length; i++) {
+            if(i%4 !== 3) {
+                  // if rgb, writes the array to the output
+                  output[i] = original[i]; // rgb
+            } else {
+                  // if alpha, writes 50% of its original value 
+                  output[i] = 0.5 * original[i]; //alpha
+            }
+      }
 }
 
 /*
@@ -110,4 +135,14 @@ function makeTransparent(original,output){
  **/
 function loadComposite(original, secondOne, output){
        // YOUR CODE GOES HERE
+      //  read the data
+       for (let i=0; i < original.length; i++) {
+            if(i%4 !== 3) {
+                  // if rgb, add original and second arrary and writes to output
+                  output[i] = original[i] + secondOne[i]; // rgb
+            } else { 
+                  // if alpha, writes original to output
+                  output[i] = original[i]; //alpha
+            }
+       }
 }

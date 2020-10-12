@@ -37,9 +37,9 @@ placeBtn.onclick = function(){
         var yPosition = 0; // should generate a value between 0 and the height
         var xPosition = 0;  //should generate a value between 0 and the width
         // generate random number for width and height
-        xPosition = Math.random();
+        xPosition = Math.random() *width;
         console.log(xPosition);
-        yPosition = Math.random();
+        yPosition = Math.random() * height;
         console.log(yPosition);
 
  	//now we'll get the HTML element where the X goes, fill in the X and set the position of the element.
